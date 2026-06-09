@@ -1,0 +1,54 @@
+DNS :-
+   
+    DNS is the Internet's naming service that resolves domain names to IP addresses, allowing users and applications to access network resources efficiently.
+   
+    work on application layer 
+    
+    DNS use UDP port 53 by default and aslon TCP 53 as a default fallback 
+
+    The DNS translates human-readable hostnames into numeric IP addresses. It functions across two primary categories: DNS Record Types (the actual data stored) and DNS Server Types (the infrastructure that routes and resolves the requests)
+
+    here we will talk about "Common DNS Record Types"
+
+            A record :-
+                    The A (Address) record maps a hostname to one or more IPv4 addresses.
+            
+                    example.com  →  192.168.1.10
+                    When someone visits example.com, DNS says:
+                    "Go to the server at IP address 192.168.1.10.
+            
+
+            AAAA Record :- 
+                    An AAAA Record connects a domain name to an IPv6 address.
+                    it is AAAA (quad-A), AAA refers to Authentication, Authorization, and Accounting.
+
+                    example.com  →  2001:0db8:85a3:0000:0000:8a2e:0370:7334
+
+                    When someone visits example.com, DNS says:
+
+                    "Go to the server at this IPv6 address."
+
+
+            CNAME Record :-
+                    stand for "Canonical Name"
+                    it record maps a domain name to another domain name.
+                    in other word, aliases of one domain/subdomain to another domain
+
+                    www.example.com → example.com
+
+                    A record  :     example.com         -->     192.168.1.10
+                    CNAME     :     www.example.com     -->     example.com
+                
+            MX Record :-
+                    stand for "Mail Exchange"
+                    it record specifies the mail server responsible for handling emails for a domain.
+                    An MX Record tells the internet which mail server should receive emails for your domain.
+
+                    Imagine your company has:
+
+                    Easy Analogy
+                    Website address → Office building
+                    Email address → Mail room
+
+                    DNS records tell visitors where the office is, while MX records tell the postal service where to deliver letters.
+
