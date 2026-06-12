@@ -1,0 +1,74 @@
+SSL :-
+        stand for "Secure Sockets Layer"
+
+Internet Engineering Task Force (IETF) developed TLS 
+
+TLS :-
+        stand for "Transport Layer Security"
+
+        TLS is a cryptographic protocol operating at the OSI model’s transport layer.
+        It allows secure communication between a client and a server over an insecure network.
+        it ensures that no one can read or modify the exchanged data.
+
+        tens of protocols have received security upgrades with the simple addition of TLS. 
+        Examples include HTTP, DNS, MQTT, and SIP, which have become HTTPS, DoT (DNS over TLS),
+        MQTTS, and SIPS, where the appended “S” stands for Secure due to the use of SSL/TLS
+
+
+HTTPS :-
+        HTTP relies on TCP and uses port 80 by default.
+        HTTPS stands for Hypertext Transfer Protocol Secure. It is basically HTTP over TLS. 
+
+        requesting a page over HTTPS will require the following three steps (after resolving the domain name):
+          >  Establish a TCP three-way handshake with the target server
+          >  Establish a TLS session
+          >  Communicate using the HTTP protocol
+	
+	Adding TLS to HTTP leads to all the packets being encrypted.
+
+
+SMTPS,POP3s and IMAPS :- 
+	
+	The insecure versions use the default TCP port numbers shown in the table below:
+
+                        Protocol	Default Port Number
+
+                          HTTP	                80
+                          SMTP	                25
+                          POP3	                110
+                          IMAP	                143
+        
+        Similar to how HTTP gets an appended S for Secure and becomes HTTPS, SMTP, POP3, and IMAP become SMTPS, 
+        POP3S, and IMAPS, respectively.
+
+        The secure versions, i.e., over TLS, use the following TCP port numbers by default:
+
+                        Protocol	Default Port Number
+
+                         HTTPS	                443
+                         SMTPS	                465 and 587
+                         POP3S	                995
+                         IMAPS	                993
+
+SSH :-
+        when using TELNET  it is risky when all the traffic is sent in cleartext,
+        It is easy for anyone monitoring the network traffic to get hold of your login credentials
+
+        This solution of this problem is Secure Shell (SSH) a protocol 
+        the OpenBSD developers released OpenSSH, an open-source implementation of SSH.
+
+        OpenSSH offers several benefits. We will list a few key points:
+
+                >     Secure authentication: Besides password-based authentication, SSH supports public key and two-factor authentication.
+
+                >     Confidentiality: OpenSSH provides end-to-end encryption, protecting against eavesdropping. Furthermore, it 
+                      notifies you of new server keys to protect against man-in-the-middle attacks.
+
+                >     Integrity: In addition to protecting the confidentiality of the exchanged data, cryptography also protects the 
+                      integrity of the traffic.
+
+                >     Tunneling: SSH can create a secure “tunnel” to route other protocols through SSH. This setup leads to a VPN-like 
+                      connection.
+
+                >     X11 Forwarding: If you connect to a Unix-like system with a graphical user interface, SSH allows you to use the
+                      graphical application over the network.
