@@ -28,8 +28,25 @@ HTTPS :-
 
 
 SMTPS,POP3s and IMAPS :- 
+
+        SMTPS : Simple Mail Transfer Protocol
+
+                It define how a mail client talks with a mail server and how a mail server talks with another.
+
+        POP   : Post Office Protocol version 3   
+
+                allow the client to communicate with a mail server and retrieve email messages.
+
+                email client sends its messages by relying on SMTP and retrieves them using POP3. 
+                SMTP is similar to handing your envelope or package to the post office, and POP3 is 
+                similar to checking your local mailbox for new letters or packages.
+
+        IMAPS : Internet Message Access Protocol 
+                IMAP allows synchronizing read, moved, and deleted messages.
+                IMAP tends to use more storage as email is kept on the server and synchronized across the email clients.
 	
-	The insecure versions use the default TCP port numbers shown in the table below:
+	
+        The insecure versions use the default TCP port numbers shown in the table below:
 
                         Protocol	Default Port Number
 
@@ -72,3 +89,24 @@ SSH :-
 
                 >     X11 Forwarding: If you connect to a Unix-like system with a graphical user interface, SSH allows you to use the
                       graphical application over the network.
+
+SFTP & FTPS :-  
+
+                SFTP : 
+                        SFTP stands for SSH File Transfer Protocol and allows secure file transfer. 
+                        It is part of the SSH protocol suite and shares the same port number, 22.
+                        you can connect using a command such as sftp username@hostname.  In my case i did " sftp kali@192.168.0.104 " .
+                        We can issue commands such as get filename and put filename to download and upload files, respectively.
+
+                FTPS :
+                        FTPS stands for File Transfer Protocol Secure.
+                        While FTP uses port 21, FTPS usually uses port 990. 
+                        It requires certificate setup
+                        Setting up an SFTP server is as easy as enabling an option within the OpenSSH server. Like HTTPS, SMTPS, POP3S,
+                        IMAPS, and other protocols that rely on TLS for security, FTPS requires a proper TLS certificate to run securely.
+
+
+
+VPN :-  
+        Stand for virtual private network.
+        creates an encrypted tunnel between your device and a VPN server, protecting data as it travels across the internet.
