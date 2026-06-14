@@ -66,3 +66,10 @@ We can see seven distinct layers to the packet: frame/packet,source [MAC],source
 
 TTL : time to live , under layer 3, , TTL stands for Time to Live. It is a field in the header of an IP packet that acts as a hop limit or 
       "self-destruct timer" to prevent packets from circulating endlessly in routing loops.
+
+TCP payload : A TCP payload is the actual application data carried inside a Transmission Control Protocol (TCP) segment. 
+
+E-tag : stand for "Entity tag". ETag (Entity Tag) is an HTTP response header that provides a unique identifier for a specific version of a web resource.
+        It is used by browsers and servers to determine whether the resource has changed, enabling efficient caching and reducing unnecessary data transfers.
+
+      
