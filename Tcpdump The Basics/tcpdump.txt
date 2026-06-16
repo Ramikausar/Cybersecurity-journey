@@ -46,4 +46,40 @@ steps to select interface for the Tcpdump:
                                 example 2 : sudo tcpdump -i eth0
                                 this will capture all the traffic of eth0
 
- 
+
+Save the Captured Packets :
+
+        we can also save tcpdum output directly to the file using " -w " flag
+                   sudo tcpdump -i <interface name> -w < file name >
+                   The file extension is most commonly set to .pcap.
+                   
+                   Example : sudo tcpdump -i wlan0 -w output 
+                             this command capture the traffic and save it to the ou file 
+                    
+                    this will not show in traffic in terminal insted it show ,
+        
+                    tcpdump: listening on eth0, link-type EN10MB (Ethernet), snapshot length 262144 bytes
+                    ^C70 packets captured
+                    72 packets received by filter
+                    0 packets dropped by kernel
+        
+                    the traffic will automatically stor to file.
+
+
+Read Captured Packets from a File :
+
+        We can use Tcpdump to read packets from a file by using -r FILE.
+
+        -i  →   listen to live network traffic
+        -r  →   replay and inspect saved traffic
+
+Apply Filters While Reading :
+
+        Applying filters while reading is very usefull, we can filter Particular packet in different different way such as port number, ip address, etc. 
+        
+        example :
+                sudo tcpdump -r dns.pcap port 53
+                sudo tcpdump -r dns.pcap host 8.8.8.8
+
+                
+
