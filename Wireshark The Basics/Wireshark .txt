@@ -72,4 +72,134 @@ TCP payload : A TCP payload is the actual application data carried inside a Tran
 E-tag : stand for "Entity tag". ETag (Entity Tag) is an HTTP response header that provides a unique identifier for a specific version of a web resource.
         It is used by browsers and servers to determine whether the resource has changed, enabling efficient caching and reducing unnecessary data transfers.
 
-  
+
+Wireshark has a powerful filter engine that helps analysts to narrow down the traffic and focus on the event of interest. Wireshark has two types of filtering
+approaches: capture and display filters. Capture filters are used for "capturing" only the packets valid for the used filter. Display filters are used for "viewing"
+the packets valid for the used filter.
+      
+      ⭐ Packet Filtering & Display Filters :
+
+
+        Wireshark provides a powerful filtering engine that helps analysts reduce noise and focus on relevant network traffic.
+
+        There are two types of filters:
+
+                > Capture Filters – Used during packet capture. Only packets matching the filter are captured.
+                > Display Filters – Used after capturing packets. All packets are captured, but only matching packets are displayed.
+
+
+      ⭐ Apply as Filter :
+
+              The quickest way to filter traffic.
+
+                 > Right-click on a field/value and select "Apply as Filter".
+                 > Displays only packets containing the selected value.
+                 > Useful for investigating a specific IP address, protocol, port, or field value.
+
+
+      ⭐ Conversation Filter :
+
+              Used to view all packets belonging to a specific communication session.
+
+                  > Filters packets based on source/destination IP addresses and port numbers.
+                  > Helps track the complete conversation between two hosts.
+                  > Access via Right-click → Conversation Filter.
+
+
+      ⭐ Colourise Conversation :
+
+              Highlights packets belonging to the same conversation without hiding other packets.
+
+                  > Makes related traffic easier to identify visually.
+                  > Does not apply a display filter.
+                  > Can be reset using:
+                          View → Colourise Conversation → Reset Colourisation
+
+
+      ⭐ Prepare as Filter :
+
+              Similar to "Apply as Filter" but does not execute immediately.
+
+                  > Generates the filter expression and places it in the filter bar.
+                  > Allows combining multiple conditions using AND/OR operators before applying.
+                  > Useful for building complex filters.
+
+
+      ⭐ Apply as Column :
+
+              Adds a selected field as a new column in the packet list pane.
+
+                  > Helps monitor specific values across all packets.
+                  > Useful for fields such as:
+                          - Source/Destination IP
+                          - TCP Stream Index
+                          - Hostnames
+                          - Response Codes
+
+
+      ⭐ Follow Stream :
+
+              Reconstructs communication streams and displays data at the application layer.
+
+                  > Supports TCP, UDP, HTTP, and other protocols.
+                  > Useful for viewing:
+                          - Usernames
+                          - Passwords
+                          - HTTP Requests/Responses
+                          - Application Data
+
+              Packet colours in stream view:
+
+                  > Red  : Client Traffic
+                  > Blue : Server Traffic
+
+              Note:
+                   Wireshark automatically creates and applies a display filter for the selected stream.
+
+
+      ⭐ Common Display Filters :
+
+                  > > Filter by Protocol Name
+
+                                  http
+                                  dns
+                                  arp
+                                  ftp
+                                  smtp
+                                  smb
+
+                        Example:
+                                http
+
+
+                  > > Filter by Port Number
+
+
+                        Syntax:
+
+                                tcp.port == <port>
+                                udp.port == <port>
+
+                        Examples:
+
+                                tcp.port == 80      (HTTP)
+                                tcp.port == 443     (HTTPS)
+                                udp.port == 53      (DNS)
+
+                  > > Filter by IP Address
+
+                        Syntax:
+                                ip.addr == <IP Address>
+                        Example:
+                                ip.addr == 192.168.1.2
+                        Displays all packets where the specified IP appears as either source or destination.
+
+
+      ⭐ Importance of Display Filters :
+
+                  > Reduce unnecessary traffic.
+                  > Focus on events of interest.
+                  > Speed up investigations.
+                  > Simplify protocol analysis.
+                  > Improve incident response and troubleshooting efficiency.
+
