@@ -1,0 +1,49 @@
+💠 Tcpdump is a powerful, command-line packet analyzer used to intercept, capture, and log network traffic passing through your computer or server.
+💠 The Tcpdump tool and its libpcap library are written in C and C++.
+💠 The libpcap library is the foundation for various other networking tools today. Moreover, it was ported to MS Windows as winpcap.
+
+Through this will learn how to:      
+
+        >> Capture packets and save them to a file
+        >> Set filters on captured packets
+        >> Control how captured packets are displayed
+
+Network Interface :
+        >>  A network interface is a connection point between your computer and a network. Each interface can send and receive network traffic.
+
+        Common interfaces include:
+
+                Interface                        Purpose
+
+                eth0, ens5       ->       Wired Ethernet connection
+                wlan0	         ->       Wi-Fi connection
+                lo	             ->       Loopback interface (localhost traffic)
+                any	             ->       All available interfaces
+
+When We run tcpdump, it needs to know where to listen for packets.
+
+If your system has multiple interfaces, traffic may be flowing through only one of them. Capturing on the wrong interface could result in seeing no packets.
+
+To solve this problem we have " -i " (-i INTERFACE)  
+
+steps to select interface for the Tcpdump:
+                 
+                 1. Finding Available Interfaces :
+
+                                ip address show 
+                                     or 
+                                ip a s
+                    it will list out all the listening interface
+                    such as >  eth0, ens5, wlan0, any.
+
+                2.  now add option in command :
+
+                                sudo tcpdump -i <interface name>
+
+                                example 1 : sudo tcpdump -i ens5
+                                this will capture all the traffic of ens5 
+
+                                example 2 : sudo tcpdump -i eth0
+                                this will capture all the traffic of eth0
+
+ 
