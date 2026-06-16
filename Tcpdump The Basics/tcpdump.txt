@@ -33,6 +33,7 @@ steps to select interface for the Tcpdump:
                                 ip address show 
                                      or 
                                 ip a s
+                                
                     it will list out all the listening interface
                     such as >  eth0, ens5, wlan0, any.
 
@@ -81,5 +82,33 @@ Apply Filters While Reading :
                 sudo tcpdump -r dns.pcap port 53
                 sudo tcpdump -r dns.pcap host 8.8.8.8
 
-                
+Limit the Number of Captured Packets :
+
+        We can specify the number of packets to capture by specifying the count using -c COUNT.
+        Without specifying a count, the packet capture will continue till you interrupt it.
+            
+            syntax :
+                sudo tcpdump -i ens5 -c < number to capture packet >
+
+            command :
+                sudo tcpdump -i ens5 -c 5
+
+Don’t Resolve IP Addresses and Port Numbers:
+
+        By default, tcpdump tries to make packet information easier to read by converting:
+
+            IP addresses → domain names (DNS lookup)
+            Port numbers → service names
+
+        For example, it may replace an IP address with a website name and replace a port number with a service name.
+
+        This name conversion requires extra lookups, which can:
+
+            Slow down packet capturing
+            Create extra DNS traffic
+            Hide the actual IP addresses and port numbers you need for analysis
+
+        The -n option tells tcpdump: Do not convert IP addresses into domain names. Show the actual IP addresses.
+
+        The -nn option tells tcpdump: Do not convert IP addresses and do not convert port numbers into service names. Show everything in numeric form.
 
