@@ -17,8 +17,8 @@ Network Interface :
 
                 eth0, ens5       ->       Wired Ethernet connection
                 wlan0	         ->       Wi-Fi connection
-                lo	             ->       Loopback interface (localhost traffic)
-                any	             ->       All available interfaces
+                lo	         ->       Loopback interface (localhost traffic)
+                any	         ->       All available interfaces
 
 When We run tcpdump, it needs to know where to listen for packets.
 
@@ -112,3 +112,26 @@ Don’t Resolve IP Addresses and Port Numbers:
 
         The -nn option tells tcpdump: Do not convert IP addresses and do not convert port numbers into service names. Show everything in numeric form.
 
+Produce (More) Verbose Output:
+        
+        Verbose :
+                In tcpdump, verbose mode controls how much detail tcpdump prints for each packet.
+
+                -v	->      Displays additional packet details beyond the default output.
+                -vv	->      Displays even more protocol-specific information.
+                -vvv	->      Displays the maximum amount of detail tcpdump can decode.
+
+        
+
+
+************************************************** Summary and Examples **************************************************
+
+                Command                 	Explanation
+
+                tcpdump -i              INTERFACE	Captures packets on a specific network interface
+                tcpdump -w              FILE	Writes captured packets to a file
+                tcpdump -r              FILE	Reads captured packets from a file
+                tcpdump -c              COUNT	Captures a specific number of packets
+                tcpdump -n              Don’t resolve IP addresses
+                tcpdump -nn	        Don’t resolve IP addresses and don’t resolve protocol numbers
+                tcpdump -v	        Verbose display; verbosity can be increased with -vv and -vvv
