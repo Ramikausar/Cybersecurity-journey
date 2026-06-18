@@ -36,3 +36,76 @@ Binary Operations :
             1                       0
 
         example : tcpdump 'host 192.168.0.1 and tcp'    
+
+TCP Flags
+
+TCP packets contain control flags.
+
+Flag            	Meaning
+
+    SYN	          Start a connection
+    ACK	          Acknowledge data
+    FIN	          Close a connection
+    RST	          Reset a connection
+    PSH	          Push data immediately
+
+
+Header Byte Filtering :
+
+    Tcpdump can inspect specific bytes inside protocol headers.
+    This is done using the syntax :
+
+            proto[offset:size]
+
+    Where :
+
+            proto   = Protocol name (tcp, udp, ip, icmp, ether, etc.)
+            offset  = Byte position starting from 0
+            size    = Number of bytes to read (optional)
+
+    Examples :
+
+            ether[0]
+            ip[0]
+            tcp[13]
+
+    This allows very detailed packet filtering based on header contents.
+
+TCP Flags Field :
+
+    Instead of remembering the exact byte offset of the TCP flags,
+    tcpdump provides a shortcut :
+
+            tcp[tcpflags]
+
+    Common TCP flags :
+
+            tcp-syn     TCP SYN (Synchronize)
+            tcp-ack     TCP ACK (Acknowledge)
+            tcp-fin     TCP FIN (Finish)
+            tcp-rst     TCP RST (Reset)
+            tcp-push    TCP PSH (Push)
+
+Filtering Only SYN Packets :
+
+    Syntax :
+
+            tcpdump "tcp[tcpflags] == tcp-syn"
+
+    This will Captures only syn packets
+
+
+Filtering Packets Containing SYN :
+
+    Syntax :
+
+            tcpdump "tcp[tcpflags] & tcp-syn != 0"
+
+        This will Captures  every syn packets
+
+            Examples :
+                 SYN
+                 SYN ACK
+                 SYN FIN
+
+            
