@@ -238,18 +238,18 @@ Ciphertext
     SAXURXKAMARI
 
 
-Quick Comparison
 
-    Cipher                          Type                       Key
+⭐ Quick Comparison
 
-Caesar Cipher                   Substitution                Shift Number
-Playfair Cipher                 Digraph Substitution        Keyword
-Rail Fence Cipher               Transposition               Number of Rails
-Row Transposition Cipher        Transposition               Numeric Key
+            Cipher                          Type                       Key
 
+        Caesar Cipher                   Substitution                Shift Number
+        Playfair Cipher                 Digraph Substitution        Keyword
+        Rail Fence Cipher               Transposition               Number of Rails
+        Row Transposition Cipher        Transposition               Numeric Key
 
-Key Difference
-    - Caesar Cipher changes letters.
-    - Playfair Cipher changes pairs of letters.
-    - Rail Fence Cipher changes positions.
-    - Row Transposition Cipher rearranges columns.
+⭐ Key Difference
+        - Caesar Cipher changes letters.
+        - Playfair Cipher changes pairs of letters.
+        - Rail Fence Cipher changes positions.
+        - Row Transposition Cipher rearranges columns.
