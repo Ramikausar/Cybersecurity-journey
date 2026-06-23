@@ -1,0 +1,15 @@
+Digital signatures provide a way to verify the authenticity and integrity of a digital message or document. 
+Proving the authenticity of files means we know who created or modified them.
+
+Using asymmetric cryptography, you produce a signature with your private key, which can be verified using your public key. 
+
+The simplest form of digital signature is encrypting the document with your private key. If someone wants to verify this signature, 
+they would decrypt it with your public key and check if the files match. 
+
+Certificates: Prove Who You Are!
+
+Certificates are an essential application of public key cryptography, and they are also linked to digital signatures. A common place where they’re used is for HTTPS.
+
+The certificates have a chain of trust, starting with a root CA (Certificate Authority). From install time, your device,
+operating system, and web browser automatically trust various root CAs. 
+Certificates are trusted only when the Root CAs say they trust the organisation that signed them.
