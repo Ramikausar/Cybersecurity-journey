@@ -1,0 +1,35 @@
+SSH (Secure Shell) is a network protocol used to securely connect to and manage remote computers over an unsecured network such as the internet .
+
+⭐ SSH provides:
+
+        Encryption — protects data from being read by others.
+        Authentication — verifies the identity of the user and/or server.
+        Integrity — ensures data is not altered during transmission.
+
+⭐ How SSH authentication works
+
+     SSH can authenticate users in two main ways:
+
+      >    Password authentication
+                Enter a username and password.
+
+      >   Public-key authentication (more secure)
+             Generate a key pair:
+                 Public key (stored on the server)
+                 Private key (kept secret on your computer)
+             The server verifies that you possess the matching private key without requiring a password.
+
+ssh-keygen is the program usually used to generate key pairs. It supports various algorithms.
+
+⭐ SSH Private Keys
+
+    treat your private SSH keys like passwords.
+    Someone with your private key can log in to servers that accept it.
+    
+⭐ Keys Trusted by the Remote Host
+
+    The ~/.ssh folder is the default place to store these keys for OpenSSH. 
+    The authorized_keys file in this directory holds public keys that are allowed access to the server if key authentication is enabled.
+    by default on many Linux distributions, key authentication is enabled as it is more secure than using a password to authenticate. 
+    only key authentication should be accepted if you want to allow SSH access for the root user.
+
